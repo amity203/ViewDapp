@@ -1,0 +1,18 @@
+.example-icon {
+  padding: 0 14px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+  }
+
+  .example-card {
+    max-width: 400px;
+    margin: auto;
+    width: 50%;
+  }
+  
+  .example-header-image {
+    background-image: url('https://cdn.pixabay.com/photo/2016/03/31/19/58/avatar-1295430_1280.png');
+    background-size: cover;
+  }
