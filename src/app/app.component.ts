@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   loading: boolean;
   ImageStore: any;
   dAddress: any;
+  status: string;
   address: string;
   caption = '';
   uploaddate: string;
@@ -72,6 +73,7 @@ export class AppComponent implements OnInit {
 
 
   captureFile(event) {
+    this.status='Capturing file to upload'
     const files = event.target.files;
     const filename = files[0].name;
     if (filename.lastIndexOf('.') <= 0) {
@@ -85,7 +87,7 @@ export class AppComponent implements OnInit {
 
   saveToIpfs(reader) {
     
-    console.log(reader);
+    this.status='Saving Image to IPFS'
     const buffer = Buffer.from(reader.result);
 
     this.ipfsApi.add(buffer, { progress: (prog) => console.log(`received: ${prog}`) })
@@ -99,7 +101,7 @@ export class AppComponent implements OnInit {
         console.error(err);
       });
 
-    this.loading = false;
+    
   }
 
   triggerFileUpload() {
@@ -111,13 +113,13 @@ export class AppComponent implements OnInit {
 
 
   async hashUpdate(ipfshash) {
-
+this.status='Updating hash to Ethereum Smart Contract'
     if (this.images[ipfshash]) {
       console.log('Hash is already stored')
     }
 
     if (!this.ImageStore) {
-      console.log('Metacoin is not loaded, unable to send transaction');
+      console.log('ImageStore is not loaded, unable to send transaction');
       return;
     }
 
@@ -126,19 +128,18 @@ export class AppComponent implements OnInit {
       //console.log(deployedImageStore);
       console.log("IPFS Hash:" + this.ipfshash);
       this.uploaddate= new Date().toUTCString();
-      console.log(this.uploaddate);
-      console.log('this.model.account:' + this.model.account);
+      // console.log(this.uploaddate);
+      // console.log('this.model.account:' + this.model.account);
       const transaction = await deployedImageStore.uploadImage.sendTransaction(this.ipfshash, this.uploaddate, { from: this.model.account });
-
-      if (!transaction) {
-        console.log('Transaction failed!');
-      } else {
-        console.log('Transaction complete!:' + transaction);
-      }
+      await this.fetchimages();
+      this.loading = false;
+    this.status='Congrats! Images uploaded and hash saved on blockchain, It should show now in stored images below:'
     } catch (e) {
       console.log(e);
       console.log('Error sending coin; see log.');
     }
+    location.reload();
+    
   }
 
   async fetchimages() {
@@ -153,14 +154,14 @@ export class AppComponent implements OnInit {
     try {
       const deployedImageStore = await this.ImageStore.deployed();
       const imageLength = await deployedImageStore.imageLength();
-      console.log('imageLength:' + imageLength);
+      //console.log('imageLength:' + imageLength);
       this.images=[];
       for (var i = 0; i < imageLength; i++) {
         const imagefromSC = await deployedImageStore.images(i);
-        console.log('imagefromSC',imagefromSC);
-        console.log('imagefromSC.imageHash',imagefromSC[0]+imagefromSC[1]);
+        // console.log('imagefromSC',imagefromSC);
+        // console.log('imagefromSC.imageHash',imagefromSC[0]+imagefromSC[1]);
           this.images.push({imagehash: "https://ipfs.io/ipfs/"+imagefromSC[0],address: imagefromSC[1], uploadDate:imagefromSC[2]});
-          console.log('Hash pushed in images array');
+          //console.log('Hash pushed in images array');
         
       }
 
@@ -170,6 +171,8 @@ export class AppComponent implements OnInit {
       console.log(e);
       //this.setStatus('Error sending coin; see log.');
     }
+
+   
   }
 
 
