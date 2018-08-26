@@ -2,9 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
 
-##Run the contract deployment command, as shown below:
+## Run the contract deployment command, as shown below:
 
-'$ truffle migrate — compile-all — reset — network ganache'
+`$ truffle migrate — compile-all — reset — network ganache`
 
 ## Node Module install
 
