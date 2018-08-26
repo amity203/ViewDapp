@@ -1,8 +1,16 @@
 # Consensys Academy Final Project -ViewDapp for immortal Images
 
 This project is part of final submission for consensys academy training. 
-This app allows a user to store an image on IPFS and store its hash to Ethereum blockchain test network via deployed smart contract.
-<img src="/img/SelectImageView.png" alt="My cool logo"/>
+This app allows a user to store an image on IPFS and store its hash to Ethereum blockchain test network via deployed smart contract. This 
+<img src="/img/SelectImageView.png" alt="Initial UI View"/>
+
+Above screen will show Ethereum address of user and select button to select an image.
+Once image is selected, application will upload image to IPFS nodes through Infura.
+Then it will store hash returned by IPFS to Ethereum via smart contract.
+
+UI application can retrieve all historic submissions along with current submission to show on UI.
+
+This is just a POC for a DApp with IPFS, it can be further extended to evoleve as decentralized Instagram.
 
 ## Steps Required to run and test this project
 

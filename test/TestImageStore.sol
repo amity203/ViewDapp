@@ -55,4 +55,18 @@ contract TestImageStore {
         Assert.equal(imagehash,expected, "getimageshash Tested Successful");
     }
 
+    /**
+    * @dev Checks to see if image date get function works or not.
+    */
+
+    function testimages() public {
+        //address contractOwner = applicantFactory.getOwner();
+        string memory imagehash;
+        const images = imageStore.images(1);
+        imagehash = images[0];
+        string memory expected = "QmPVpoK4GDdBqCzFMqt8WgSoujoJRSbwR1NKtdKH9peMA7";
+
+        Assert.equal(imagehash,expected, "getimageshash Tested Successful");
+    }
+
 }
