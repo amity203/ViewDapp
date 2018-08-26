@@ -89,7 +89,6 @@ contract ImageStore {
     }
 
     /** @dev Returns image hash for an index
-      * @param index Uint value for index of image hash
       * @return String value of image hash
       */
     

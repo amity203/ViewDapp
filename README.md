@@ -24,8 +24,8 @@ Ganache-cli should be installed properly on your machine. See the above link for
 
 ### 2. Clone the repo, cd into the directory, and install node modules.
 
-clone this repo
-$ cd Consensys-Academy-Final-Project/
+clone this repo- https://github.com/amity203/ViewDapp.git
+$ cd ViewDapp
 
 ### 3. Node Module install
 
@@ -45,7 +45,7 @@ Run ` truffle test` to execute tests designed for smart contract.
 
 ### 7. Build for Frondend
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ### 8. Run and launch UI application to interact with deployed smart contract
 
