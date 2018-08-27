@@ -31,23 +31,26 @@ Ganache-cli should be installed properly on your machine. See the above link for
 ### 2. Clone the repo, cd into the directory, and install node modules.
 
 clone this repo- https://github.com/amity203/ViewDapp.git
-$ cd ViewDapp
+
+`cd ViewDapp`
 
 ### 3. Node Module install
 
-Run `npm install` to install npm packages required for the project. The npm packages will be stored in the `node-modules/` directory.
+Run `$ npm install` to install npm packages required for the project. The npm packages will be stored in the `node-modules/` directory.
 
 ### 4. Open another terminal and run the Ganache blockchain (remember to set up your seed phase in Metamask).
 
-$ ganache-cli
+`ganache-cli`
 
 ### 5. Run the contract deployment command, as shown below:
 
-`$ truffle migrate — compile-all — reset — network ganache`
+Run `truffle migrate — compile-all — reset — network ganache`
+This step will deploy contracts and create ABI.
 
 ### 6. Truffle Test
 
-Run ` truffle test` to execute tests designed for smart contract.
+Run `truffle test` to execute tests designed for smart contract.
+This step will run all test cases designed for smart contract.
 
 ### 7. Build for Frondend
 
