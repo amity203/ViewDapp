@@ -42,6 +42,8 @@ Run `$ npm install` to install npm packages required for the project. The npm pa
 
 `ganache-cli`
 
+#### Note: Make sure your ganache amd metamask use same address and same network. If localhost have any issue, use custom RPC option like `HTTP://0.0.0.0:8545`
+
 ### 5. Run the contract deployment command, as shown below:
 
 Run `truffle migrate — compile-all — reset — network ganache`
@@ -59,6 +61,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ### 8. Run and launch UI application to interact with deployed smart contract
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### 9. Steps to Interact with UI
+
+As per project requirement, it should show you your address on top righ corner as shown in above screenshots as well. Also, follow instructions written along with above screenshots in case of any doubt. Rest, application have simple functionality and should not be complex to use.
 
 
 ## Further help
