@@ -6,9 +6,15 @@ This app allows a user to store an image on IPFS and store its hash to Ethereum 
 
 Above screen will show Ethereum address of user and select button to select an image.
 Once image is selected, application will upload image to IPFS nodes through Infura.
+Below screen will show status of progress:
+
 Then it will store hash returned by IPFS to Ethereum via smart contract.
 
-UI application can retrieve all historic submissions along with current submission to show on UI.
+<img src="/img/IPFSStatus.png" alt="IPFS progress status"/>
+
+UI application can retrieve all historic submissions along with current submission to show on UI. Just refresh if latest image is not showing and you image should show up as on below screen:
+
+<img src="/img/Homepage.png" alt="Initial UI View"/>
 
 This is just a POC for a DApp with IPFS, it can be further extended to evoleve as decentralized Instagram.
 
