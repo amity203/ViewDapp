@@ -28,6 +28,8 @@ Truffle should be installed properly on your machine. See the above link for how
 ganache-cli install - https://github.com/trufflesuite/ganache-cli
 Ganache-cli should be installed properly on your machine. See the above link for how to do this. The GUI Ganache can also be used.  Make sure its running on port: 8545
 
+Install angular as this project use angular: `npm install -g @angular/cli`
+
 ### 2. Clone the repo, cd into the directory, and install node modules.
 
 clone this repo- https://github.com/amity203/ViewDapp.git
